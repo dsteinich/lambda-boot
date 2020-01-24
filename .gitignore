@@ -1,0 +1,9 @@
+/.serverless/
+/.settings/
+/target/
+/.classpath
+/.flattened-pom.xml
+/node_modules/
+/.project
+/package-lock.json
+/response.json
