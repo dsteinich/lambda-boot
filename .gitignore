@@ -7,3 +7,5 @@
 /.project
 /package-lock.json
 /response.json
+/.terraform/
+/terraform.*

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+fail_count=1
+while true
+do
+  stat=$(docker ps -a | grep healthy)
+  if [ $? -eq 0 ]; then
+    echo "$(date -u) health check success"
+    exit 0
+  else
+    if [ "$fail_count" -eq "21" ]; then
+      echo "$(date -u) health check failed"
+      exit 2
+    else
+      echo "$(date -u) waiting on health check"
+      sleep 45
+      fail_count=$[$fail_count +1]
+    fi
+  fi
+done
