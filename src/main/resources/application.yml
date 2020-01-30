@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${WQP_DATABASE_ADDRESS}:5435/${WQP_DATABASE_NAME}
-    username: ${WQP_DB_READ_ONLY_USERNAME}
-    password: ${WQP_DB_READ_ONLY_PASSWORD}
+    url: jdbc:postgresql://${AQTS_DATABASE_ADDRESS}:5435/${AQTS_DATABASE_NAME}?currentSchema=${AQTS_SCHEMA_NAME}
+    username: ${AQTS_SCHEMA_OWNER_USERNAME}
+    password: ${AQTS_SCHEMA_OWNER_PASSWORD}
 
 logging:
   level:

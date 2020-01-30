@@ -1,20 +1,17 @@
 package org.bbggr;
 
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ADao extends SqlSessionDaoSupport {
+public class ADao {
 
 	@Autowired
-	public ADao(SqlSessionFactory sqlSessionFactory) {
-		setSqlSessionFactory(sqlSessionFactory);
-	}
+	protected JdbcTemplate jdbcTemplate;
 
 	public int getRecordCount() {
-		return getSqlSession().selectOne("one");
+		return jdbcTemplate.queryForObject("select count(*) from json_data", Integer.class);
 	}
 
 }

@@ -9,3 +9,6 @@
 /response.json
 /.terraform/
 /terraform.*
+/.env
+/.attach_pid*
+/application.yml
